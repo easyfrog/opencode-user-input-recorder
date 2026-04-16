@@ -1,6 +1,6 @@
 # OpenCode User Input Recorder
 
-[切换语言 | Switch Language](https://easyfrog.github.io/opencode-user-input-recorder/)
+[切换语言 | Switch Language](https://easyfrog.github.io/opencode-user-input-recorder/docs/)
 
 自动记录用户在 OpenCode 中的每次输入到 Markdown 文件中。
 
@@ -83,4 +83,4 @@
 
 ---
 
-For English documentation, visit: https://easyfrog.github.io/opencode-user-input-recorder/
+For English documentation, see [README-en.md](https://github.com/easyfrog/opencode-user-input-recorder/blob/master/README-en.md)
