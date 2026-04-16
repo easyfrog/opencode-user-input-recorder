@@ -1,6 +1,6 @@
 # OpenCode User Input Recorder
 
-[切换语言 | Switch Language](https://easyfrog.github.io/opencode-user-input-recorder/docs/)
+[中文文档](https://github.com/easyfrog/opencode-user-input-recorder)
 
 Automatically records user inputs in OpenCode to Markdown files.
 
@@ -80,7 +80,3 @@ User input content...
 - OpenCode Plugin SDK
 - TypeScript
 - Cross-platform file opening (Windows/macOS/Linux)
-
----
-
-For bilingual documentation with language switcher, visit [docs/](https://easyfrog.github.io/opencode-user-input-recorder/docs/)
