@@ -1,0 +1,26 @@
+{
+  "name": "opencode-user-input-recorder",
+  "version": "1.0.0",
+  "description": "Automatically record user inputs in OpenCode to Markdown files",
+  "main": "index.ts",
+  "keywords": [
+    "opencode",
+    "opencode-plugin",
+    "session-recorder",
+    "user-input",
+    "markdown"
+  ],
+  "author": "easyfrog",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/easyfrog/opencode-user-input-recorder.git"
+  },
+  "homepage": "https://github.com/easyfrog/opencode-user-input-recorder#readme",
+  "dependencies": {
+    "@opencode-ai/plugin": "1.4.6"
+  },
+  "engines": {
+    "opencode": ">=1.0.0"
+  }
+}
