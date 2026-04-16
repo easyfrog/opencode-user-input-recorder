@@ -17,7 +17,23 @@ async function openFile(filePath: string, $: any) {
   } else if (platform === "darwin") {
     await $`open "${filePath}"`
   } else {
-    await $`xdg-open "${filePath}" 2>/dev/null || echo "无法自动打开，请手动打开: ${filePath}"`
+    await $`xdg-open "${filePath}" 2>/dev/null || echo "Cannot open automatically, please open manually: ${filePath}"`
+  }
+}
+
+async function executeOpenRecord(baseDir: string, sessionID: string, $: any, lang: "en" | "zh" = "zh") {
+  const safeSessionTitle = sessionID.replace(/[<>:"/\\|?*]/g, "_")
+  const filePath = path.join(baseDir, ".opencode", "recorders", `recorder-${safeSessionTitle}.md`)
+
+  if (fs.existsSync(filePath)) {
+    await openFile(filePath, $)
+    return lang === "en" 
+      ? `Record file opened: ${filePath}`
+      : `已打开记录文件: ${filePath}`
+  } else {
+    return lang === "en" 
+      ? "Record file does not exist"
+      : "记录文件不存在"
   }
 }
 
@@ -111,19 +127,11 @@ ${userText}
     },
     tool: {
       openRecord: tool({
-        description: "打开当前会话的记录文件 / Open current session's record file",
+        description: "Open current session's record file",
         args: {},
         execute: async (_args: any, context: ToolContext) => {
           const sessionTitle = lastSessionID || context.sessionID || "default"
-          const safeSessionTitle = sessionTitle.replace(/[<>:"/\\|?*]/g, "_")
-          const filePath = path.join(baseDir, ".opencode", "recorders", `recorder-${safeSessionTitle}.md`)
-
-          if (fs.existsSync(filePath)) {
-            await openFile(filePath, $)
-            return `已打开记录文件: ${filePath}`
-          } else {
-            return "记录文件不存在"
-          }
+          return executeOpenRecord(baseDir, sessionTitle, $, "en")
         },
       }),
       "打开记录": tool({
@@ -131,15 +139,7 @@ ${userText}
         args: {},
         execute: async (_args: any, context: ToolContext) => {
           const sessionTitle = lastSessionID || context.sessionID || "default"
-          const safeSessionTitle = sessionTitle.replace(/[<>:"/\\|?*]/g, "_")
-          const filePath = path.join(baseDir, ".opencode", "recorders", `recorder-${safeSessionTitle}.md`)
-
-          if (fs.existsSync(filePath)) {
-            await openFile(filePath, $)
-            return `已打开记录文件: ${filePath}`
-          } else {
-            return "记录文件不存在"
-          }
+          return executeOpenRecord(baseDir, sessionTitle, $, "zh")
         },
       }),
     },
