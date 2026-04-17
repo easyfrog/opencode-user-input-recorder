@@ -74,10 +74,12 @@ export const SessionRecorderPlugin: Plugin = async ({ project, client, directory
         const sessionTitle = input.sessionID || "default"
         const safeSessionTitle = sessionTitle.replace(/[<>:"/\\|?*]/g, "_")
 
-        const record = `------
-${timestamp}
+        const record = `___
+> ${timestamp}
 
-${userText}
+  ${userText}
+
+
 `
 
         const recordersDir = path.join(baseDir, ".opencode", "recorders")
