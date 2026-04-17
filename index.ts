@@ -5,6 +5,7 @@ import * as path from "path"
 import * as os from "os"
 
 const TOAST_INTERVAL_MS = 15 * 60 * 1000
+const RECORD_FOLDER = '.OpencodeRecorder'
 
 async function openFile(filePath: string, $: any) {
   const platform = os.platform()
@@ -23,7 +24,7 @@ async function openFile(filePath: string, $: any) {
 
 async function executeOpenRecord(baseDir: string, sessionID: string, $: any, lang: "en" | "zh" = "zh") {
   const safeSessionTitle = sessionID.replace(/[<>:"/\\|?*]/g, "_")
-  const filePath = path.join(baseDir, ".opencode", "recorders", `recorder-${safeSessionTitle}.md`)
+  const filePath = path.join(baseDir, RECORD_FOLDER, `recorder-${safeSessionTitle}.md`)
 
   if (fs.existsSync(filePath)) {
     await openFile(filePath, $)
@@ -82,7 +83,7 @@ export const SessionRecorderPlugin: Plugin = async ({ project, client, directory
 
 `
 
-        const recordersDir = path.join(baseDir, ".opencode", "recorders")
+        const recordersDir = path.join(baseDir, RECORD_FOLDER)
 
         if (!fs.existsSync(recordersDir)) {
           fs.mkdirSync(recordersDir, { recursive: true })

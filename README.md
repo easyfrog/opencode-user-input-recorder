@@ -6,7 +6,7 @@
 
 ## 功能
 
-- **自动记录**：每次发送消息时自动保存到 `.opencode/recorders/` 目录
+- **自动记录**：每次发送消息时自动保存到 `.OpencodeRecorder/recorders/` 目录
 - **会话隔离**：每个会话独立存储，文件名包含会话 ID
 - **智能通知**：首次对话显示 toast 通知，15 分钟内连续对话不再重复提醒
 - **跨平台支持**：支持 Windows、macOS、Linux
@@ -41,7 +41,7 @@
 插件会在每次输入时自动保存对话到：
 
 ```
-.opencode/recorders/recorder-{sessionID}.md
+.OpencodeRecorder/recorders/recorder-{sessionID}.md
 ```
 
 ### 打开记录
@@ -72,8 +72,8 @@
 ## 注意事项
 
 - Toast 中的文件路径暂时不支持点击打开，请使用 "打开记录" / "Open Record" 命令
-- 记录文件保存在项目的 `.opencode/recorders` 目录中
-- 如果项目没有 `.opencode` 目录，会自动创建
+- 记录文件保存在项目的 `.OpencodeRecorder/recorders` 目录中，不会污染用户的 OpenCode 配置
+- 如果项目没有 `.OpencodeRecorder` 目录，会自动创建
 
 ## 技术栈
 

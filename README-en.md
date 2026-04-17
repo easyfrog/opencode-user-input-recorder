@@ -6,7 +6,7 @@ Automatically records user inputs in OpenCode to Markdown files.
 
 ## Features
 
-- **Auto Recording**: Automatically saves every message to `.opencode/recorders/` directory
+- **Auto Recording**: Automatically saves every message to `.OpencodeRecorder/recorders/` directory
 - **Session Isolation**: Each session is stored separately with session ID in filename
 - **Smart Notifications**: Shows toast on first message, no repeat within 15 minutes
 - **Cross-Platform**: Supports Windows, macOS, and Linux
@@ -41,7 +41,7 @@ Or install from npm:
 Plugin automatically saves conversations to:
 
 ```
-.opencode/recorders/recorder-{sessionID}.md
+.OpencodeRecorder/recorders/recorder-{sessionID}.md
 ```
 
 ### Open Record
@@ -72,8 +72,8 @@ User input content...
 ## Limitations
 
 - Toast file path currently does not support click-to-open, please use "打开记录" / "Open Record" command
-- Record files are stored in project's `.opencode/recorders` directory
-- If project does not have `.opencode` directory, it will be created automatically
+- Record files are stored in project's `.OpencodeRecorder/recorders` directory, won't pollute user's OpenCode config
+- If project does not have `.OpencodeRecorder` directory, it will be created automatically
 
 ## Tech Stack
 
