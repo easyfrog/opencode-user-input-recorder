@@ -46,11 +46,13 @@
 
 ### 打开记录
 
-在 OpenCode 中输入 "打开记录" 或 "Open Record"，插件会自动使用系统默认程序打开对应的 md 文件。
+在 OpenCode 中输入 `openRecord`（英文）或 `openRecordZh`（中文）命令，插件会自动使用系统默认程序打开对应的 md 文件。
 
 - **Windows**: 使用资源管理器打开
 - **macOS**: 使用 Finder 打开
 - **Linux**: 使用 xdg-open 打开
+
+> 注意：原命令 "打开记录" 因兼容性问题已更名为 `openRecordZh`
 
 ### Toast 通知
 
@@ -71,9 +73,14 @@
 
 ## 注意事项
 
-- Toast 中的文件路径暂时不支持点击打开，请使用 "打开记录" / "Open Record" 命令
+- 请使用 `openRecord`（英文）或 `openRecordZh`（中文）命令打开记录文件
 - 记录文件保存在项目的 `.OpencodeRecorder` 目录中，不会污染用户的 OpenCode 配置
 - 如果项目没有 `.OpencodeRecorder` 目录，会自动创建
+
+## Bug 修复
+
+- 修复了工具名称包含非 ASCII 字符导致 DeepSeek 等兼容 OpenAI API 的模型报错的问题
+- 原命令 "打开记录" 已更名为 `openRecordZh` 以符合 API 规范
 
 ## 技术栈
 

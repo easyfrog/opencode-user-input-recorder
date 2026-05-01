@@ -46,11 +46,13 @@ Plugin automatically saves conversations to:
 
 ### Open Record
 
-In OpenCode, type "打开记录" or "Open Record" to open the current session's record file using the system default application.
+In OpenCode, use `openRecord` (English) or `openRecordZh` (Chinese) command to open the current session's record file using the system default application.
 
 - **Windows**: Opens with Explorer
 - **macOS**: Opens with Finder
 - **Linux**: Opens with xdg-open
+
+> Note: The original command "打开记录" has been renamed to `openRecordZh` for compatibility.
 
 ### Toast Notifications
 
@@ -71,9 +73,14 @@ User input content...
 
 ## Limitations
 
-- Toast file path currently does not support click-to-open, please use "打开记录" / "Open Record" command
+- Use `openRecord` (English) or `openRecordZh` (Chinese) command to open record files
 - Record files are stored in project's `.OpencodeRecorder` directory, won't pollute user's OpenCode config
 - If project does not have `.OpencodeRecorder` directory, it will be created automatically
+
+## Bug Fixes
+
+- Fixed issue where tool names with non-ASCII characters caused errors with DeepSeek and other OpenAI API compatible models
+- Renamed "打开记录" to `openRecordZh` to comply with API naming conventions
 
 ## Tech Stack
 

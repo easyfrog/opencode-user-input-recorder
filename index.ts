@@ -137,7 +137,7 @@ export const SessionRecorderPlugin: Plugin = async ({ project, client, directory
           return executeOpenRecord(baseDir, sessionTitle, $, "en")
         },
       }),
-      "打开记录": tool({
+      openRecordZh: tool({
         description: "打开当前会话的记录文件",
         args: {},
         execute: async (_args: any, context: ToolContext) => {
